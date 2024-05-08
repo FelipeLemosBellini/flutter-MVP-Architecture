@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/presenter/home_presenter.dart';
+import 'package:mvp/counter_page/presenter/home_presenter.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -43,6 +43,10 @@ class _HomeViewState extends State<HomeView> {
                   const SizedBox(height: 8),
                   const Text("Lock/Unlock Counter", style: TextStyle(color: Colors.white)),
                   MaterialButton(onPressed: _presenter.changeLockCounter, color: Colors.white54, child: Icon(_lockIcon))
-                ])));
+                ]),
+            floatingActionButton: FloatingActionButton(
+                onPressed: () => _presenter.goToColorPage(context),
+                backgroundColor: Colors.white54,
+                child: const Icon(Icons.navigate_next))));
   }
 }

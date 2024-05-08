@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/view/home_view.dart';
+import 'package:mvp/color_generator_page/view/color_generator_view.dart';
+import 'package:mvp/counter_page/view/home_view.dart';
 
 void main() {
   runApp(const MyApp());
