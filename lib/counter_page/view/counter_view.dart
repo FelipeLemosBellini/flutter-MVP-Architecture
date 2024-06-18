@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/counter_page/presenter/home_presenter.dart';
+import 'package:mvp/counter_page/presenter/counter_presenter.dart';
+import 'package:mvp/counter_page/presenter/counter_presenter_interface.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -9,11 +10,11 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  late HomePresenter _presenter;
+  late ICounterPresenter _presenter;
 
   @override
   void initState() {
-    _presenter = HomePresenter();
+    _presenter = CounterPresenter();
     super.initState();
   }
 
@@ -22,7 +23,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-        listenable: _presenter,
+        listenable: _presenter as ChangeNotifier,
         builder: (_, __) => Scaffold(
             backgroundColor: const Color(0xFF282A36),
             appBar: AppBar(
